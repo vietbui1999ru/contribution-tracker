@@ -3,7 +3,8 @@
 **Contribution Number:** 2  
 **Student:** Quoc-Viet Bui  
 **Issue:** [processing/p5.js#7569 — key may be incorrect inside an event handler](https://github.com/processing/p5.js/issues/7569)  
-**Status:** Phase II — In Progress (fix implemented, verification pending)
+**Last Updated:** 2026-07-14  
+**Status:** Stuck — blocked at the Understand + Implementation phase
 
 ---
 
@@ -141,6 +142,10 @@ Selected issue, read the maintainer thread to pin the root cause to the removed 
 ### Week 2 Progress
 
 Implemented and locally tested both fixes in `src/events/keyboard.js`; added two regression tests. Verification (targeted tests, full events suite, eslint) run pending before commit/PR.
+
+### Current Status (2026-07-14) — Stuck
+
+Blocked at the **Understand + Implementation** phase. Still working through how the two defects in `_onkeydown`/`_onkeyup` interact with the `e.repeat` guard from PR #7435, and whether restoring the `key`/`code` assignment plus switching the guard to `_downKeyCodes` fully preserves the intended #7282 behavior across browsers. Have not yet reached a confident, verified implementation — verification and PR remain blocked on resolving this understanding.
 
 ### Code Changes
 
